@@ -1,6 +1,6 @@
 [package]
 name = "simplebnf"
-version = "0.1.0"
+version = "0.1.1"
 entrypoint = "simplebnf.typ"
 authors = ["Jay Lee <https://github.com/Zeta611>"]
 license = "MIT"
