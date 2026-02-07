@@ -1,7 +1,7 @@
 #let bnf(
   ..body,
 ) = {
-  let content = body.pos().flatten()
+  let content = body.pos().intersperse((none,) * 5 * 2).flatten()
 
   grid(
     columns: (
