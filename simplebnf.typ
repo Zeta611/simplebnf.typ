@@ -3,7 +3,7 @@
 ) = {
   let content = body.pos().flatten()
 
-  table(
+  grid(
     columns: (
       auto,
       auto,
