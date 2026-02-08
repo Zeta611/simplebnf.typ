@@ -1,9 +1,9 @@
 #let bnf(
   ..body,
 ) = {
-  let content = body.pos().flatten()
+  let content = body.pos().intersperse((none,) * 5 * 2).flatten()
 
-  table(
+  grid(
     columns: (
       auto,
       auto,
@@ -16,7 +16,7 @@
       center,
       center,
       left,
-      left,
+      left + horizon,
     ),
     inset: 0.28em,
     stroke: none,
@@ -45,9 +45,16 @@
 }
 
 #let Or(
-  var,
+  ..vars,
   annot,
 ) = (
-  var,
+  (
+    box(vars.at(0)),
+    ..for v in vars.pos().slice(1) {
+      (box($|$ + h(0.4em) + v),)
+    },
+  )
+    .intersperse(h(0.4em))
+    .join(),
   annot,
 )
