@@ -5,7 +5,6 @@ entrypoint = "simplebnf.typ"
 authors = ["Jay Lee <https://github.com/Zeta611>"]
 license = "MIT"
 description = "A simple package to format Backus-Naur form (BNF)"
-homepage = "https://github.com/Zeta611/simplebnf.typ"
 repository = "https://github.com/Zeta611/simplebnf.typ"
 keywords = ["bnf", "grammar", "parsing", "formatting", "syntax", "tree"]
 categories = ["components", "visualization", "integration"]
