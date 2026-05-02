@@ -1,7 +1,13 @@
 #let bnf(
+  inset: 0.28em,
   ..body,
 ) = {
   let content = body.pos().intersperse((none,) * 5 * 2).flatten()
+
+  // This 'set' calls defines a default value for all inset
+  // dimensions, so that callers can use `inset: (y: 1em,)` and have
+  // the `x` dimension implicitly set at 0.28em as intended.
+  set grid(inset: 0.28em)
 
   grid(
     columns: (
@@ -18,7 +24,7 @@
       left,
       left + horizon,
     ),
-    inset: 0.28em,
+    inset: inset,
     stroke: none,
     ..content,
   )
