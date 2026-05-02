@@ -7,11 +7,12 @@
 )
 
 #let esc(e) = $\\ #h(0pt) #e$
+#let inset = (y: 0.5em,)
 
 #grid(
   columns: (auto, auto),
   gutter: 4%,
-  bnf(
+  bnf(inset: inset,
     Prod($r$, {
       Or[$epsilon$][Epsilon]
       Or[$c d$][Character descriptor]
@@ -34,7 +35,7 @@
       Or[$< #h(0pt) !$][Negative lookbehind]
     }),
   ),
-  bnf(
+  bnf(inset: inset,
     Prod($c d$, {
       Or[$c$][Single character]
       Or[$[c_1 #h(0pt) - #h(0pt) c_2]$][Range]

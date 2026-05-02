@@ -14,6 +14,8 @@ Import simplebnf via
 
 Use the `bnf` function to display the BNF production rules. Each production rule can be created using the `Prod` constructor function, which accepts the (left-hand side) metavariable, an optional annotation for it, an optional delimiter (which defaults to $\Coloneqq$), and a list of (right-hand side) alternatives. Each alternative should be created using the `Or` constructor, which accepts syntactic forms and an annotation.
 
+You can optionally use an `inset` parameter to specify horizontal and vertical padding of each part of each production rule, with the same format as the `inset` parameter of the `grid`, `block` and `box` elements.
+
 Below are some examples using simplebnf.
 
 ```typst
@@ -59,13 +61,16 @@ Below are some examples using simplebnf.
 
 ![System F](./examples/system-f.svg)
 
+The example below uses a `(y: 0.6em,)` inset dictionary to specify larger vertical spacing between entries. This is useful if your rules user superscripts heavily.
+
 ```typst
 #let esc(e) = $\\ #h(0pt) #e$
+#let inset = (y: 0.6em,)
 
 #grid(
   columns: (auto, auto),
   gutter: 4%,
-  bnf(
+  bnf(inset: inset,
     Prod($r$, {
       Or[$epsilon$][Epsilon]
       Or[$c d$][Character descriptor]
@@ -88,7 +93,7 @@ Below are some examples using simplebnf.
       Or[$< #h(0pt) !$][Negative lookbehind]
     }),
   ),
-  bnf(
+  bnf(inset: inset,
     Prod($c d$, {
       Or[$c$][Single character]
       Or[$[c_1 #h(0pt) - #h(0pt) c_2]$][Range]
