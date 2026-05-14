@@ -118,7 +118,7 @@ The example below uses a `(y: 0.6em,)` inset dictionary to specify larger vertic
 
 ## Authors
 
-- Jay Lee <jaeho.lee@snu.ac.kr>
+- Jay Lee <jay.lee@berkeley.edu>
 
 ## License
 
